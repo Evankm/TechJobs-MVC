@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "results";
+}
+
+<h2>results</h2>
+<table>
+    
+    @foreach (Dictionary<string, string> job in ViewBag.jobs)
+    { int i = 0;
+        
+        
+        foreach (KeyValuePair<string, string> item in job)
+        {
+            if (item.Key == "name")
+            {
+                i++;
+            }
+                <tr class="@( i % 2 == 0 ? "even" : "odd" ) ">
+
+                    <td>@(item.Key + " " + item.Value)</td>
+                    </tr>
+                    
+        }
+        
+    }
+</table>
+
+
